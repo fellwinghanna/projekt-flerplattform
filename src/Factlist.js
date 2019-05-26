@@ -19,7 +19,7 @@ class Factlist extends Component {
             )
 
         }
-        
+
         return <Fact fact={FactData} />
 
     }

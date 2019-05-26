@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './index.css';
 import Header from './Header';
 import Factlist from './Factlist';
+import Form from './Form';
 
 class App extends Component{
 
@@ -26,6 +27,7 @@ class App extends Component{
         return (
             <div>
                 <Header/>
+                <Form/>
                 <Factlist factlist={facts}/>
             </div>
             // i Factlist lägg till "factlist={this.state.factlist}"
