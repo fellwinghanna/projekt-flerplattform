@@ -5,6 +5,39 @@ import Factlist from './Factlist';
 
 class App extends Component{
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            factlist: [],
+        }
+    }
+
+    componentDidMount() {
+        let url = 'https://cat-fact.herokuapp.com/facts';
+        fetch(url
+            /* , {
+           credentials: 'include',
+           headers: {
+            "access-control-allow-origin" : "*",
+        }}*/)
+        .then(result => {
+            if(result.ok) {
+                return result.json()
+            } else {
+                throw Error(`Request rejected with status ${result.status}`);
+            }
+        })
+        .then((factlist) => {
+            this.setState({
+                factlist: factlist,
+            })
+        })
+        .catch(error => {
+            console.log(error);
+        });
+    }
+
+    /*
     state = {
         factlist: [
             {
@@ -17,6 +50,8 @@ class App extends Component{
         }
         ]
     };
+
+*/
 // state? hämta API här
 // från api lägg till id och text
 
