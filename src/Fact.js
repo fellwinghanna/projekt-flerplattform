@@ -3,13 +3,11 @@ import React, {Component} from 'react';
 export class Fact extends Component {
     
     render() {
-        console.log("hej4")
         const facts = this.props.fact;
-        console.log(facts[0].text);
+        console.log(facts); 
 
-        const factitem = facts.map((fact) =>
-            <p> {fact.text} </p>
-        )
+        const factitem =  <p> {facts} </p>;
+
             return (
                 <div>
                     {factitem}

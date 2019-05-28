@@ -5,7 +5,6 @@ import './index.css';
 
 class A extends Component {
     render() {
-      console.log("hej")
 
       return (
         <div className="App">

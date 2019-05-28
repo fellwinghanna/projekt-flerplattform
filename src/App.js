@@ -11,7 +11,7 @@ class App extends Component{
         this.state = {
             factlist: [],
         }
-        console.log(this.state.factlist);
+        //console.log(this.state.factlist);
     }
 
     componentDidMount() {
@@ -32,8 +32,8 @@ class App extends Component{
 
 
     render(){
-        console.log("hej1")
         const facts = this.state.factlist;
+
         console.log(facts);
         return (
             <div>

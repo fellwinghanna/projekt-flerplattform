@@ -3,11 +3,10 @@ import React, {Component} from 'react';
 
 class Header extends Component{
     render() {
-        console.log("hej2")
 
         return (
             <header> 
-                <h1> Cat Fatcs. </h1>
+                <h1> FUN jokes. </h1>
             </header>
         )
     }

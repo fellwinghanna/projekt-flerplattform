@@ -3,30 +3,27 @@ import Fact from './Fact';
 
 class Factlist extends Component {
     render() {
-        console.log("hej3")
 
-        const FactData = [];
         const factlist = this.props.factlist;
         console.log(factlist)
 
         if(factlist.type === "single"){
-            FactData.push(
-                {
-                    "id": factlist.id,
-                    "text": factlist.joke
-                })
+            this.setJoke();
+            return <Fact fact={factlist.joke} />
 
-                return <Fact fact={FactData} />
         }else {
-            FactData.push(
-                {
-                    "id": factlist.id,
-                    "text": factlist.setup + " " + factlist.delivery
-                })
 
-                return <Fact fact={FactData} />
+            const twoType = factlist.setup + " " + factlist.delivery
+            this.setJoke();
+            return <Fact fact={twoType} />
         }
 
+    }
+
+    setJoke(){
+        const data = this.props.factlist.joke; 
+        //localStorage.clear();
+        localStorage.setItem("joke", data);
     }
 }
 
