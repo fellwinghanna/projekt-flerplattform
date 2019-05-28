@@ -9,18 +9,23 @@ class Factlist extends Component {
         const factlist = this.props.factlist;
         console.log(factlist)
 
-        for(let i=0; i < factlist.length; i++){
-
+        if(factlist.type === "single"){
             FactData.push(
-            {
-                "id": factlist[i].id,
-                "text": factlist[i].text
-            },
-            )
+                {
+                    "id": factlist.id,
+                    "text": factlist.joke
+                })
 
+                return <Fact fact={FactData} />
+        }else {
+            FactData.push(
+                {
+                    "id": factlist.id,
+                    "text": factlist.setup + " " + factlist.delivery
+                })
+
+                return <Fact fact={FactData} />
         }
-        
-        return <Fact fact={FactData} />
 
     }
 }
